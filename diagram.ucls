@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="Coords" project="Ex2OOP" file="/Ex2OOP/src/Coords" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="132" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="GUI" project="Ex2OOP" file="/Ex2OOP/src/GUI" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="318" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="Geom" project="Ex2OOP" file="/Ex2OOP/src/Geom" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="504" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="4" language="java" name="GIS" project="Ex2OOP" file="/Ex2OOP/src/GIS" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="690" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="Threads" project="Ex2OOP" file="/Ex2OOP/src/Threads" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="876" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="6" language="java" name="File_format" project="Ex2OOP" file="/Ex2OOP/src/File_format" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="62" width="146" x="1062" y="94"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <interface id="7" language="java" name="Coords.coords_converter" project="Ex2OOP" 
+    file="/Ex2OOP/src/Coords/coords_converter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="255" y="297"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
