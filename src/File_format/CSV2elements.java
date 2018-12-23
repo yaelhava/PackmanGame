@@ -13,7 +13,7 @@ import TheGame.Packman;
 import TheGame.PackmanMetaData;
 
 /**
- * this class takes a csv file and inserts every line to an element object.
+ * this class takes a csv file and inserts every line to an packman or fruit object.
  * @author yael hava and naama hartuv
  */
 
@@ -26,23 +26,22 @@ public class CSV2elements
 	/**
 	 * constructor
 	 * @param path - the given cvs file's path
+	 * @param game - the game
 	 */
 
 	public CSV2elements(String path, Game game) {
 		this.path = path;
 		this.game = new Game(game.getPackmanList(), game.getFruitList());
-		//game = new Game(packmanList,fruitList);
-		
-
 		toElem(this.game);
 	}
 
 	/**
-	 * create an array list with elements and add any element to a layer.
+	 * create an array list with elements and add any element to an array list
+	 * of packmans or fruits
+	 * @param game - the game
 	 */
 
 	public void toElem(Game game) {
-		//Game newGame = game;
 		CSVreader r = new CSVreader(path);
 		ArrayList<String[]> arr = r.CSVReader();
 
@@ -57,9 +56,9 @@ public class CSV2elements
 	}
 
 	/**
-	 * enters data and coordinate to a created element.
+	 * enters data and coordinate to a created packman.
 	 * @param arr - the line
-	 * @return e - the element with the data and the coordinate
+	 * @return p - the packman with the data and the coordinate
 	 */
 
 	private Packman toPackmanElem(String arr[]) {
@@ -69,6 +68,12 @@ public class CSV2elements
 		return p;
 	}
 
+	/**
+	 * enters data and coordinate to a created fruit.
+	 * @param arr - the line
+	 * @return f - the fruit with the data and the coordinate
+	 */
+	
 	private Fruit toFruitElem(String arr[]) {
 		FruitMetaData data = new FruitMetaData(arr);
 		Point3D point = new Point3D(arr);

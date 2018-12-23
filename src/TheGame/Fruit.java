@@ -2,61 +2,88 @@ package TheGame;
 
 import Geom.Point3D;
 
+/**
+ * this class represents a fruit in the game
+ * @author yael hava and naama hartuv
+ */
+
 public class Fruit {
-	
-//	private ElementGeom point;
+
 	private FruitMetaData data;
 	private Point3D point3D;
-	//private Pixel pixel;
 	private int ID;
 	private double weight;
-	
-	
+
+
+	/**
+	 * constructor
+	 * @param point - the point
+	 * @param data - the data
+	 */
+
 	public Fruit(Point3D point, FruitMetaData data) {
 		this.point3D = point;
 		this.data = data;
-	
+
 	}
-	
+
+	/**
+	 * constructor
+	 * @param point - the point
+	 * @param ID - the ID
+	 */
+
 	public Fruit(Point3D point, int ID) {
 		this.point3D = point;
 		//this.pixel = pixel;
 		this.ID = ID;
 	}
 
+	/**
+	 * constructor
+	 * @param point - the point
+	 */
+
 	public Fruit(Point3D point) {
 		this.point3D = point;
-	
+
 	}
-	
-//	public ElementGeom getPoint() {
-//		return point;
-//	}
+
+	/**
+	 * getter for data
+	 * @return data
+	 */
 
 	public FruitMetaData getFruitData() {
 		return data;
 	}
 
+	/**
+	 * getter for point
+	 * @return point
+	 */
+
 	public Point3D getPoint3D() {
 		return point3D;
 	}
+
+	/**
+	 * getter for id
+	 * @return
+	 */
 
 	public int getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
-	}
+	/**
+	 * getter for weight
+	 * @return
+	 */
 
 	public double getWeight() {
 		return weight;
 	}
 
-	public void setWeight(double weight) {
-		this.weight = weight;
-	}
-	
-	
 
 }

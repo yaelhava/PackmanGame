@@ -9,12 +9,24 @@ import javax.imageio.ImageIO;
 import Coords.MyCoords;
 import Geom.Point3D;
 
+/**
+ * this class represents a map, and converts between pixsels and packmans
+ * @author yael hava and naama hartuv
+ *
+ */
+
 public class Map {
 
 	private Point3D startPoint = new Point3D(35.212418,32.105765);
 	private Point3D endPoint = new Point3D(35.202484,32.101874);
 	private BufferedImage map;
 
+	
+	/**
+	 * constructor
+	 * @param path - the image path
+	 */
+	
 	public Map(String path) {
 		try {
 			map = ImageIO.read(new File(path));
@@ -23,6 +35,13 @@ public class Map {
 		}
 	}
 
+	/**
+	 * calclulates the normal of a point
+	 * @param point the point we wants to normalize
+	 * @param start - start point
+	 * @param end - end point
+	 * @return - the normalize of the point
+	 */
 	
 	private Point3D normalPoint(Point3D point, Point3D start ,Point3D end) { ///////done
 		double x = Math.abs((point.x()-end.x())/(start.x()-end.x()));
@@ -30,6 +49,14 @@ public class Map {
 
 		return new Point3D(x, y);
 	}
+	
+	/**
+	 * convert from pixel to coordinate
+	 * @param current - the point to convert
+	 * @param Xstart - x of start point
+	 * @param Ystart - y of start point
+	 * @return - the coordinate of the point
+	 */
 
 	public Point3D pixel2GPS(Point3D current, int Xstart, int Ystart) {
 		Point3D temp =normalPoint(current, new Point3D(Xstart, Ystart), new Point3D(0, 0));
@@ -42,7 +69,13 @@ public class Map {
 		return result;
 	}
 	
-
+/**
+ * convert from coordinate to pixel
+ * @param current - the point to convert
+ * @param start- start point
+ * @param end- end point
+ * @return the point in pixel
+ */
 	public Point3D GPS2Pixel(Point3D current,int start, int end) {
 		current = new Point3D(current.y(), current.x());
 		Point3D temp = normalPoint(current, startPoint, endPoint);
@@ -61,6 +94,13 @@ public class Map {
 	}
 
 	
+	/**
+	 * distance between 2 pixels
+	 * @param p1 - point 1
+	 * @param p2 - point 2
+	 * @return - the distance
+	 */
+	
 	public double pixelDistance (Point3D p1, Point3D p2) {
 			Point3D p1GPS = pixel2GPS(p1, map.getWidth(), map.getHeight());
 			Point3D p2GPS = pixel2GPS(p2, map.getWidth(), map.getHeight());
@@ -69,6 +109,13 @@ public class Map {
 			
 			return dis;
 		}
+	
+	/**
+	 * calculates the angel 
+	 * @param p1 - point 1
+	 * @param p2 - point 2
+	 * @return the angel
+	 */
 		
 		public double pixelEngel (Point3D p1, Point3D p2) {
 			Point3D p1GPS= pixel2GPS(p1, map.getWidth(), map.getHeight());

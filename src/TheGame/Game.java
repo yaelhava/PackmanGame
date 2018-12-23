@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import File_format.CSV2elements;
 import File_format.CSVWriter;
 
+/**
+ * keeps a collection of fruits and packmans
+ * @author yael hava and naama hartuv
+ *
+ */
 
 public class Game {
 
@@ -12,20 +17,31 @@ public class Game {
 	private ArrayList<Packman> packmanList;
 	private Packman packman;
 	private Fruit fruit;
-	private CSVWriter csvWriter;
-	CSV2elements c;
 
+	/**
+	 * constructor
+	 */
 
 	public Game() {
 		fruitList = new ArrayList<Fruit>();
 		packmanList = new ArrayList<Packman>();
 	}
 
+	/**
+	 * constructor
+	 * @param packmanList
+	 * @param fruitList
+	 */
+	
 	public Game(ArrayList<Packman> packmanList, ArrayList<Fruit> fruitList) {
 		this.fruitList = fruitList;
 		this.packmanList = packmanList;
 	}
 	
+	/**
+	 * adds fruits and packmans to their lists
+	 * @param o
+	 */
 	
 	public void add(Object o) {
 		if(o == packman) {
@@ -34,15 +50,6 @@ public class Game {
 		else if(o == fruit) {
 			fruitList.add((Fruit)o);
 		}
-	}
-
-	public void setFruitList(ArrayList<Fruit> fruitList) {
-		this.fruitList = fruitList;
-	}
-
-
-	public void setPackmanList(ArrayList<Packman> packmanList) {
-		this.packmanList = packmanList;
 	}
 
 

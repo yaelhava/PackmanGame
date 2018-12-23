@@ -1,9 +1,20 @@
 package TheGame;
 
+/**
+* the data of a packman
+* @author yael hava and naama hartuv
+*
+*/
+
 public class PackmanMetaData {
 
 	private double moveAbility, radius;
 	private int ID;
+	
+	/**
+	 * constructor
+	 * @param s - string line
+	 */
 	
 	public PackmanMetaData(String[] s) {
 		moveAbility = Double.parseDouble(s[5]);

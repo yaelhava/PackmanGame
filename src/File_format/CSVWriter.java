@@ -8,24 +8,33 @@ import TheGame.Fruit;
 import TheGame.Game;
 import TheGame.Packman;
 
+/**
+ * this class writes a csv file
+ * @author yael hava and naama hartuv
+ *
+ */
+
 public class CSVWriter {
 
-	Game game;
-	int id = 0;
+	private Game game;
+	private int id = 0;
+
+	/**
+	 * constructor
+	 * @param game - the game
+	 */
 
 	public CSVWriter(Game game) {
 		this.game = game;
 	}
 
+	/**
+	 * writes the csv file
+	 * @param fileName - the file's path
+	 * @param pw  - the file
+	 */
 
 	public void writeCSV(String fileName, PrintWriter pw) {
-		//		try {
-		//			pw = new PrintWriter(new File(fileName));
-		//		} 
-		//		catch (FileNotFoundException e) {
-		//			e.printStackTrace();
-		//			return;
-		//		}
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Type");
@@ -48,35 +57,16 @@ public class CSVWriter {
 		packman2String(game.getPackmanList(),  sb);
 		fruit2String(game.getFruitList(), sb);
 
-		//System.out.println("what i wanted" + packmanList.get(0));
-
-		//		for(int i = 0; i < packmanList.size(); i++) {
-		//			System.out.println("point is: " + packmanList.get(i).getPoint3D().x());
-		//			readFromString(e2CSV.packman2String(packmanList), sb);
-
-		//	}
-		//		for(int i = 0; i < fruitList.size(); i++) {
-		//			readFromString(e2CSV.fruit2String(fruitList), sb);
-		//}
-		//	System.out.println(sb.toString());
-
 		pw.write(sb.toString());
 		pw.close();
 	}
 
-
-
-//	public StringBuilder readFromString(String[] s, StringBuilder sb) {
-//		for(int i = 0; i < s.length; i++) {
-//			sb.append(s[i]);
-//			if(i != s.length - 1) {
-//				sb.append(",");
-//			}
-//		}
-//		sb.append('\n');
-//		return sb;
-//
-//	}
+	/**
+	 * takes every packman and turn it to a string line
+	 * @param list - packman list
+	 * @param sb - the StringBuilder
+	 * @return - the StringBuilder
+	 */
 
 	public StringBuilder packman2String(ArrayList<Packman> list, StringBuilder sb) {
 		for(Packman p : list) {
@@ -94,7 +84,13 @@ public class CSVWriter {
 		return sb;
 	}
 
-
+	/**
+	 * takes every fruit and turn it to a string line
+	 * @param list - fruit list
+	 * @param sb - the StringBuilder
+	 * @return - the StringBuilder
+	 */
+	
 	public StringBuilder fruit2String(ArrayList<Fruit> list, StringBuilder sb) {
 		for(Fruit f : list) {
 			sb.append("F,");

@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
-<Style id="yellow"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle></Style><Style id="red"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle></Style><Document
+<Style id="yellow"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/ylw-stars.png</href></Icon></IconStyle></Style><Style id="red"><IconStyle><Icon><href>http://maps.google.com/mapfiles/kml/paddle/red-stars.png</href></Icon></IconStyle></Style><Folder><Placemark>
 Description
 <type>packman</type>
 <ID>0</ID>
 <speed>1.0</speed>/Description
 <TimeStamp>
- <when> 2018-12-23T20:24:20Z </when>
+ <when> 2018-12-23T23:31:32Z </when>
 </TimeStamp>
 <styleUrl>#yellow</styleUrl>
 <Point>
-<coordinates>32.104017651019646,35.206353301842626,0.0</coordinates>
+<coordinates>35.20520623275604,32.10495903337821,0.0</coordinates>
 </Point>
-<Placemark>
+</Placemark><Placemark>
 Description
 <type>fruit</type>
 <ID>0</ID>
 <weight>0.0</weight>/Description
 <TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
 </TimeStamp>
 <styleUrl>#red</styleUrl>
 <Point>
-<coordinates>32.10448097,35.20569900363636,0.0</coordinates>
+<coordinates>35.205200926040064,32.10495903337821,0.0</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+Description
+<type>packman</type>
+<ID>1</ID>
+<speed>1.0</speed>/Description
+<TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
+</TimeStamp>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.206544369568746,32.104907215706454,0.0</coordinates>
+</Point>
+</Placemark><Placemark>
+Description
+<type>fruit</type>
+<ID>0</ID>
+<weight>0.0</weight>/Description
+<TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
+</TimeStamp>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.205820844375964,32.104907215706454,0.0</coordinates>
 </Point>
 </Placemark>
 <Placemark>
@@ -31,11 +57,37 @@ Description
 <ID>0</ID>
 <weight>0.0</weight>/Description
 <TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
 </TimeStamp>
 <styleUrl>#red</styleUrl>
 <Point>
-<coordinates>32.104020535,35.20634922909091,0.0</coordinates>
+<coordinates>35.206540255778116,32.104907215706454,0.0</coordinates>
 </Point>
 </Placemark>
-</Document>
+<Placemark>
+Description
+<type>packman</type>
+<ID>2</ID>
+<speed>1.0</speed>/Description
+<TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
+</TimeStamp>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.206177115954915,32.10356161651861,0.0</coordinates>
+</Point>
+</Placemark><Placemark>
+Description
+<type>fruit</type>
+<ID>0</ID>
+<weight>0.0</weight>/Description
+<TimeStamp>
+ <when> 2018-12-23T23:31:32Z </when>
+</TimeStamp>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.20617289676425,32.10356161651861,0.0</coordinates>
+</Point>
+</Placemark>
+</Folder></Document>
 </kml>
