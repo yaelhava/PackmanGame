@@ -15,27 +15,15 @@ public class Game {
 	private CSVWriter csvWriter;
 	CSV2elements c;
 
-	
-	public ArrayList<Fruit> getFruitList() {
-		return fruitList;
-	}
-
-
-	public ArrayList<Packman> getPackmanList() {
-		return packmanList;
-	}
-
-
-	
 
 	public Game() {
 		fruitList = new ArrayList<Fruit>();
 		packmanList = new ArrayList<Packman>();
 	}
 
-	
-	public Game(String path) {
-		c = new CSV2elements(path);
+	public Game(ArrayList<Packman> packmanList, ArrayList<Fruit> fruitList) {
+		this.fruitList = fruitList;
+		this.packmanList = packmanList;
 	}
 	
 	
@@ -48,13 +36,24 @@ public class Game {
 		}
 	}
 
-
-//	public void exportCsvFile(String fileName, PrintWriter pw) {
-//        csvWriter.writeCSV(fileName, pw, getPackmanList(), getFruitList());
-//
-//	}
+	public void setFruitList(ArrayList<Fruit> fruitList) {
+		this.fruitList = fruitList;
+	}
 
 
+	public void setPackmanList(ArrayList<Packman> packmanList) {
+		this.packmanList = packmanList;
+	}
+
+
+	public ArrayList<Fruit> getFruitList() {
+		return fruitList;
+	}
+
+
+	public ArrayList<Packman> getPackmanList() {
+		return packmanList;
+	}
 
 
 }

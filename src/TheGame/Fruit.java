@@ -8,6 +8,8 @@ public class Fruit {
 	private FruitMetaData data;
 	private Point3D point3D;
 	//private Pixel pixel;
+	private int ID;
+	private double weight;
 	
 	
 	public Fruit(Point3D point, FruitMetaData data) {
@@ -16,12 +18,16 @@ public class Fruit {
 	
 	}
 	
-	public Fruit(Point3D point) {
+	public Fruit(Point3D point, int ID) {
 		this.point3D = point;
 		//this.pixel = pixel;
+		this.ID = ID;
 	}
 
+	public Fruit(Point3D point) {
+		this.point3D = point;
 	
+	}
 	
 //	public ElementGeom getPoint() {
 //		return point;
@@ -34,10 +40,23 @@ public class Fruit {
 	public Point3D getPoint3D() {
 		return point3D;
 	}
-	
-//	public Pixel getPixel() {
-//		return pixel;
-//	}
 
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+	
+	
 
 }

@@ -22,32 +22,36 @@ public class CSV2elements
 	private String path;
 	private Game game;
 
+
 	/**
 	 * constructor
 	 * @param path - the given cvs file's path
 	 */
 
-	public CSV2elements(String path) {
+	public CSV2elements(String path, Game game) {
 		this.path = path;
-		game = new Game();
-		System.out.println("hii");
-		toElem();
+		this.game = new Game(game.getPackmanList(), game.getFruitList());
+		//game = new Game(packmanList,fruitList);
+		
+
+		toElem(this.game);
 	}
 
 	/**
 	 * create an array list with elements and add any element to a layer.
 	 */
 
-	private void toElem() {
+	public void toElem(Game game) {
+		//Game newGame = game;
 		CSVreader r = new CSVreader(path);
 		ArrayList<String[]> arr = r.CSVReader();
 
-		for(int i=1; i<arr.size(); i++) {
+		for(int i=0; i<arr.size(); i++) {
 			if(arr.get(i)[0].equals("P")) {
-				game.add(toPackmanElem(arr.get(i)));
+				game.getPackmanList().add(toPackmanElem(arr.get(i)));
 			}
 			else if(arr.get(i)[0].equals("F")) {
-				game.add(toFruitElem(arr.get(i)));
+				game.getFruitList().add(toFruitElem(arr.get(i)));
 			}
 		}
 	}
@@ -59,31 +63,25 @@ public class CSV2elements
 	 */
 
 	private Packman toPackmanElem(String arr[]) {
-		System.out.println("hiipacmkan");
-
 		PackmanMetaData data = new PackmanMetaData(arr);
 		Point3D point = new Point3D(arr);
-		Packman p = new Packman(point, data);
+		Packman p = new Packman(point, data.getMoveAbility(),data.getRadius(), data.getID());
 		return p;
 	}
 
 	private Fruit toFruitElem(String arr[]) {
-		System.out.println("hiifruit");
-
 		FruitMetaData data = new FruitMetaData(arr);
 		Point3D point = new Point3D(arr);
 		Fruit f = new Fruit(point, data);
 		return f;
 	}
 
-	/**
-	 * getter for the layer created at this class
-	 * @return l - the layer
-	 */
-
 	public Game getGame() {
 		return game;
 	}
+
+	
+	
 
 }
 

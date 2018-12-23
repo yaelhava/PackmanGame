@@ -36,7 +36,7 @@ public class CSVreader {
 
 		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) 
 		{
-			System.out.println("hii333");
+			
 
 			int counter =0;
 			while ((line = br.readLine()) != null) {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import Coords.MyCoords;
 import File_format.TimeRunComperator;
 import TheGame.Fruit;
 import TheGame.Map;
@@ -15,9 +16,11 @@ public class Path {
 	private Packman packman;
 	private PriorityQueue<nextFruit> packmanPrio; 
 	private Map map;
+	
 
 
-	public Path() {
+	public Path(ArrayList<Fruit> fruitList) {
+		this.fruitList= fruitList;
 		packmanPrio = new PriorityQueue<nextFruit>(fruitList.size(), new TimeRunComperator());
 	}
 
@@ -25,7 +28,6 @@ public class Path {
 		this.packman= p;
 		this.fruitList= fruitList;
 		packmanPrio = new PriorityQueue<nextFruit>(fruitList.size(), new TimeRunComperator());
-
 
 	}
 
@@ -45,14 +47,16 @@ public class Path {
 	}
 
 	public nextFruit next() {
-		return packmanPrio.poll();
+		return packmanPrio.peek();
 	}
+	
+	
 
 	public double runTime(Packman p, Fruit f) {
-		double dis= map.PixelDistance(p.getPoint3D(), f.getPoint3D());
-		double radius= p.getPackmanData().getRadius();
-		double speed= p.getPackmanData().getMoveAbility();
-
+		MyCoords coords = new MyCoords(0, 0, 0);
+		double dis= coords.distance3d(p.getPoint3D(), f.getPoint3D());
+		double radius= p.getRadius();
+		double speed= p.getMoveAbility();
 		return (dis-radius)/speed;
 	}
 	
